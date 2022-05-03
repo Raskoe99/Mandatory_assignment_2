@@ -1,5 +1,6 @@
 <script>
     import { user, cartList } from "../../components/stores.js"
+    import { Link } from "svelte-navigator"
 
     const itemList = [
         {id : 1, itemPicture : "img/itemImg/chair.jpg", itemName : "Dining chair", itemDescription : "Classic furnished dining chair without amrests. Most highly acclaimed for it comfortable design and timeless look.", itemPrice : 300, itemInStore : 14},
@@ -42,8 +43,11 @@
                         {item.itemInStore}
                     </td>
                     <td>
-                        <!--{#if $user.userinfo.isLoggedIn}-->
-                        <button on:click="{addItem(item)}">Put in cart</button> <!--Add funktion til items, on:click="{addItem(item)}"-->
+                        {#if $user.isLoggedIn}
+                            <button on:click="{addItem(item)}">Put in cart</button>
+                        {:else if !$user.isLoggedIn}
+                            <Link to="/login">Put in cart</Link>
+                        {/if}
                     </td>
                 </tr>
             {/each}

@@ -1,5 +1,5 @@
 <script>
-    import { user, companyEmail, baseUrl } from "../../../components/stores.js"
+    import { user, companyEmail, baseUrl } from "../../components/stores.js"
     import { Link, useNavigate, useLocation } from "svelte-navigator"
     import { toasts } from "svelte-toasts";
 

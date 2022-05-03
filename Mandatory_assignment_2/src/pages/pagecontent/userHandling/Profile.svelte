@@ -12,6 +12,7 @@
         const promise = fetch(logOutUrl).then(response => response.json())
         await promise.then(data =>{
             $user = data
+            localStorage.clear()
             const from = ($location.state && $location.state.from) || "/login"
             navigate(from, { replace: true })
         })

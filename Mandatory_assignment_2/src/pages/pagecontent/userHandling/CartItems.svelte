@@ -1,5 +1,5 @@
 <script>
-    import { user, cartList } from "../../components/stores.js";
+    import { user, cartList } from "../../../components/stores.js";
 
     let arrayId = 0
     let sumPrices = 0
@@ -7,11 +7,16 @@
     function addId(arrayId) {
         return arrayId += 1
     }
+    function removeItem(item) {
+        $cartList.removeItem($cartList[item.id])
+    }
 
     $cartList.forEach(item => {
         item.id = addId(arrayId)
         sumPrices += item.itemPrice
     })
+
+    
 </script>
 
 <div>
@@ -35,7 +40,7 @@
             {#each $cartList as item}
                 <tr>
                     <td>
-                        <img src="{item.itemPicture}" alt="itemPicture">
+                        <img src="{item.itemPicture}" alt="itemPicture" width="150px" height="200px">
                     </td>
                     <td>
                         {item.itemName}
@@ -45,6 +50,9 @@
                     </td>
                     <td>
                         {item.itemPrice}
+                    </td>
+                    <td>
+                        <button on:click="{removeItem(item)}">Remove item</button>
                     </td>
                 </tr>
             {/each}

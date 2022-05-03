@@ -1,5 +1,5 @@
 <script>
-    import { user, baseUrl } from "../../../components/stores.js"
+    import { user, baseUrl } from "../../components/stores.js"
     import { Link, useNavigate, useLocation } from "svelte-navigator"
     import { toasts } from "svelte-toasts";
 
@@ -25,6 +25,7 @@
                     const from = ($location.state && $location.state.from) || "/profile"
                     navigate(from, { replace: true })
                     toasts.success("Login successful, welcome " + $user.userInfo.username)
+                    localStorage.setItem(JSON.stringify("user", $user))
                 } else {
                     toasts.warning("Username or password is incorrect")
                 }

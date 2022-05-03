@@ -1,5 +1,5 @@
 <script>
-    import { user, baseUrl, companyEmail, mailerUrl } from "../../../components/stores.js"
+    import { user, baseUrl, companyEmail, mailerUrl } from "../../components/stores.js"
     import { Link, useNavigate, useLocation } from "svelte-navigator"
     import { toasts } from "svelte-toasts"
   
@@ -72,7 +72,7 @@
         <p>Insert email</p>
         <input
             bind:value={email}
-            type="text"
+            type="email"
             name="email"
             placeholder="Email"
             required

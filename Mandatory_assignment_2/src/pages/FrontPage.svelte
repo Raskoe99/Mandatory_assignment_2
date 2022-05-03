@@ -3,14 +3,14 @@
     import { Router, Route, Link } from "svelte-navigator"
     import PrivateRoute from "../components/PrivateRoute.svelte"
     import ItemList from "./pagecontent/ItemList.svelte"
-    import Profile from "./pagecontent/userHandling/Profile.svelte"
-    import CartItems from "./pagecontent/CartItems.svelte"
     import About from "./pagecontent/About.svelte"
-    import Login from "./pagecontent/userHandling/Login.svelte"
-    import SignUp from "./pagecontent/userHandling/SignUp.svelte"
+    import Login from "./pagecontent/Login.svelte"
+    import SignUp from "./pagecontent/SignUp.svelte"
+    import ForgotPassword from "./pagecontent/ForgotPassword.svelte"
+    import Profile from "./pagecontent/userHandling/Profile.svelte"
+    import CartItems from "./pagecontent/userHandling/CartItems.svelte"
     import ChangeEmail from "./pagecontent/userHandling/ChangeEmail.svelte"
-    import Delete from "./pagecontent/userHandling/Delete.svelte"
-    import ForgotPassword from "./pagecontent/userHandling/ForgotPassword.svelte"
+    import DeleteUser from "./pagecontent/userHandling/DeleteUser.svelte"
     
 </script>
   
@@ -87,7 +87,7 @@
     
     <PrivateRoute path="deleteAccount" let:location>
         <h3>Delete account</h3>
-        <Delete/>
+        <DeleteUser/>
     </PrivateRoute>
     
 
@@ -133,9 +133,11 @@
         background: -moz-linear-gradient(bottom right, paleturquoise 0%, paleturquoise 10%, paleturquoise 10%, paleturquoise 20%,  paleturquoise 20%, paleturquoise 30%,  paleturquoise 30%, paleturquoise 40%, paleturquoise 40%, paleturquoise 50%, #07a39b 50%, #07a39b 60%, #e21c43 60%, #e21c43 70%, #9d1e62 70%, #9d1e62 80%, #fdac34 80%, #fdac34 90%, paleturquoise 90%, paleturquoise 100%);
         background: linear-gradient(to bottom right, paleturquoise 0%, paleturquoise 10%, paleturquoise 10%, paleturquoise 20%,  paleturquoise 20%, paleturquoise 30%,  paleturquoise 30%, paleturquoise 40%, paleturquoise 40%, paleturquoise 50%, #07a39b 50%, #07a39b 60%, #e21c43 60%, #e21c43 70%, #9d1e62 70%, #9d1e62 80%, #fdac34 80%, #fdac34 90%, paleturquoise 90%, paleturquoise 100%);
     }
+    main {
+        min-height: calc(100vh-60px);
+    }
     .footer {
         background-color: paleturquoise;
-        min-height: 100vh - 3.7em;
         left: 0;
         bottom: 0;
         height: 100px;
